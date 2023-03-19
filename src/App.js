@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, {useState} from "react";
 import Icon from "./components/Icon";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,8 +7,8 @@ import { Card, CardBody, Container, Button, Col, Row } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
-const gameOver= new Audio("../gameover.mp3");
-const moveSound=new Audio("../move.mp3");
+//const gameOver= new Audio("../gameover.mp3");
+//const moveSound=new Audio("../move.mp3");
 
 const itemArray = new Array(9).fill("empty");
 
@@ -85,10 +84,9 @@ const App = () => {
     if (itemArray[itemNumber] === "empty") {
       itemArray[itemNumber] = isCircle ? "circle" : "cross";
       setIsCircle(!isCircle);
-      moveSound.play();
+      //moveSound.play();
     } else {
-      return toast("already filled", { type: "error" });
-      gameOver.play();
+      return toast("already filled", { type: "error" })
     }
 
     checkIsWinner();
